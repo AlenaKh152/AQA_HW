@@ -1,3 +1,4 @@
+from typing import cast
 # Заменить символ “#” на символ “/”
 # в строке 'www.my_site.com#about'
 string_1 = 'www.my_site.com#about'
@@ -58,6 +59,6 @@ print(string_6)
 # вставьте на 3-ю позицию новое значение,
 # удалите элемент из списка под индексом 6
 list_7 = list(range(1, 11))
-list_7.insert(2, 'New value')
+list_7.insert(2, cast(int, 'New value'))
 del list_7[6]
 print(list_7)
