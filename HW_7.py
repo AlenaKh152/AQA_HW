@@ -18,22 +18,24 @@ else:
     print('false')
 
 # 3 Time Converter
-time = '00:30'
+time = '00:15'
 time_list = time.split(':')
 
-if int(time_list[0]) < 10:                         # если часы меньше 10 - не пишите '0' перед ними
-    time_list[0] = str(int(time_list[0]))
+hours = int(time_list[0])
+
+if hours < 10:                                     # если часы меньше 10 - не пишите '0' перед ними
+    time_list[0] = str(hours)
 
 am = ' a.m.'
 pm = ' p.m.'
 
-if int(time_list[0]) == 0:                         # с 00:00 до 00:59
-    time_list[0] = str(int(time_list[0]) + 12)
+if hours == 0:                                     # с 00:00 до 00:59
+    time_list[0] = str(hours + 12)
     converted_time = (':').join(time_list) + am
-elif 12 < int(time_list[0]) <= 23:                 # с 13:00 до 23:59
-    time_list[0] = str(int(time_list[0]) - 12)
+elif 12 < hours <= 23:                             # с 13:00 до 23:59
+    time_list[0] = str(hours - 12)
     converted_time = (':').join(time_list) + pm
-elif int(time_list[0]) == 12:                      # с 12:00 до 12:59
+elif hours == 12:                                  # с 12:00 до 12:59
     converted_time = (':').join(time_list) + pm
 else:                                              # с 01:00 до 11:59
     converted_time = (':').join(time_list) + am
