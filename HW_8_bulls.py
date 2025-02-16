@@ -8,6 +8,7 @@ def init():                                                  # ввод числ
     num = input('Введите четырехзначное число ')
     return num
 
+
 def is_num_valid(num):                   # проверка введенного числа на повторяющиеся цифры и длину
     is_valid = ''
     if len(num) != 4:
@@ -20,6 +21,7 @@ def is_num_valid(num):                   # проверка введенного
                 is_valid = 'false'
                 break
     return is_valid
+
 
 def count_choice(num):             # подсчет быков и коров
     num_tup = tuple(num)
@@ -38,6 +40,7 @@ def count_choice(num):             # подсчет быков и коров
         repeat = 1
     return repeat
 
+
 def main():
     while True:
         num = init()
@@ -48,9 +51,11 @@ def main():
             print("Число содержит повторяющиеся цифры, попробуйте ещё раз!")
         else:
             is_repeat = count_choice(num)
-            if is_repeat == 1:
-                continue
-            else:
+            if is_repeat == 0:
                 break
+            elif is_repeat == 1:
+                continue
+
 
 main()
+
