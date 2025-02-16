@@ -4,6 +4,7 @@ os.system('cls')
 n = '6521'
 n_tup = tuple(str(n))
 
+
 def init():                                                  # ввод числа пользователем
     num = input('Введите четырехзначное число ')
     return num
@@ -51,11 +52,10 @@ def main():
             print("Число содержит повторяющиеся цифры, попробуйте ещё раз!")
         else:
             is_repeat = count_choice(num)
+            if is_repeat == 1:
+                continue
             if is_repeat == 0:
                 break
-            elif is_repeat == 1:
-                continue
 
 
 main()
-
