@@ -6,22 +6,14 @@ n_tup = tuple(str(n))
 
 
 def init():                                                  # ввод числа пользователем
-    num = input('Введите четырехзначное число ')
-    return num
+    return input('Введите четырехзначное число ')
 
 
 def is_num_valid(num):                   # проверка введенного числа на повторяющиеся цифры и длину
-    is_valid = ''
-    if len(num) != 4:
-        is_valid = 'length'
+    if len(num) != 4 or len(set(num)) != 4:
+        return False
     else:
-        for i in num:
-            if num.count(i) == 1:
-                is_valid = 'true'
-            elif num.count(i) > 1:
-                is_valid = 'false'
-                break
-    return is_valid
+        return True
 
 
 def count_choice(num):             # подсчет быков и коров
@@ -35,27 +27,21 @@ def count_choice(num):             # подсчет быков и коров
             cows += 1
     if bulls == 4:
         print('Вы выиграли!')
-        repeat = 0
+        return False
     else:
         print(f'{cows} коровы, {bulls} быков')
-        repeat = 1
-    return repeat
+        return True
 
 
 def main():
     while True:
         num = init()
-        check = is_num_valid(num)
-        if check == 'length':
-            print("Введенное число не является четырехзначным!")
-        elif check == 'false':
-            print("Число содержит повторяющиеся цифры, попробуйте ещё раз!")
+        if not is_num_valid(num):
+            print("Введенное число не является четырехзначным или содержит повторяющиеся цифры!")
         else:
-            is_repeat = count_choice(num)
-            if is_repeat == 1:
-                continue
-            if is_repeat == 0:
+            if not count_choice(num):
                 break
+            continue
 
 
 main()
