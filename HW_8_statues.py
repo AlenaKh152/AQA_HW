@@ -6,6 +6,6 @@ os.system('cls')
 statues = [6, 2, 3, 8]
 min_value = min(statues)
 max_value = max(statues)
-all_values = [i for i in range(min_value, max_value + 1)]
+all_values = list(range(min_value, max_value + 1))
 missed_count = len(all_values) - len(statues)
 print(f'Не хватает {missed_count} статуй')
