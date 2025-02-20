@@ -7,10 +7,7 @@ def init():
 
 
 def check(number):
-    if number.isdigit():
-        return True
-    else:
-        return False
+    return bool(number.isdigit())
 
 
 def validate_card():
@@ -23,10 +20,7 @@ def validate_card():
         list_even = [int(num[i]) * 2 if int(num[i]) * 2 < 9
                      else int(num[i]) * 2 - 9 for i in range(1, len(num), 2)]
         final_num = sum(list_odd) + sum(list_even)
-        if final_num % 10 == 0:
-            return True
-        else:
-            return False
+        return bool(final_num % 10 == 0)
 
 
 print(validate_card())
