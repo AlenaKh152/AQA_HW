@@ -2,7 +2,7 @@ import os
 os.system('cls')
 
 
-def init():
+def card_number():
     return input('Введите номер карты: ')
 
 
@@ -11,7 +11,7 @@ def check(number):
 
 
 def validate_card():
-    number = init()
+    number = card_number()
     if not check(number):
         return 'Ошибка ввода: Номер карты может содержать только цифры.'
     else:
