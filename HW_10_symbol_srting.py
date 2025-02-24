@@ -11,9 +11,8 @@ def delete_symbol(cur_string: str):
     while "#" in str_list and len(str_list) > 1:
         del str_list[str_list.index('#') - 1]
         del str_list[str_list.index('#')]
-    else:
-        if "#" in str_list and len(str_list) == 1:
-            del str_list[0]
+    if "#" in str_list and len(str_list) == 1:
+        del str_list[0]
     return ('').join(str_list)
 
 

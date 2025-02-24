@@ -3,14 +3,14 @@ os.system('cls')
 
 
 def initial_candles_number():
-   return int(input('Введите количество свечей: '))
+    return int(input('Введите количество свечей: '))
 
 
 def make_new_number():
-   return int(input('Введите количество остатков для изготовления 1 свечи: '))
+    return int(input('Введите количество остатков для изготовления 1 свечи: '))
 
 
-def count_candles(candle_number: str, make_new: str) -> int:
+def count_candles(candle_number: int, make_new: int) -> int:
     count = candle_number
     rest = candle_number
     while rest >= make_new:

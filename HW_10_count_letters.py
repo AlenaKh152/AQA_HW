@@ -12,7 +12,7 @@ def string_processing(my_string: str) -> str:
     for i in my_list:
         count = 1
         new_list.append(i)
-        for j in my_list[my_list.index(i) + 1 : ]:
+        for j in my_list[my_list.index(i) + 1:]:
             if i == j:
                 count += 1
                 del my_list[my_list.index(j)]
