@@ -31,8 +31,9 @@ def show_result_string():
 show_result_string()
 
 
-# assert solution("cccbba") == "c3b2a"
-# assert solution("abeehhhhhccced") == "abe2h5c3ed"
-# assert solution("aaabbceedd") == "a3b2ce2d2"
-# assert solution("abcde") == "abcde"
-# assert solution("aaabbdefffff") == "a3b2def5"
+if __name__ == '__main__':
+    assert string_processing("cccbba") == "c3b2a"
+    assert string_processing("abeehhhhhccced") == "abe2h5c3ed"
+    assert string_processing("aaabbceedd") == "a3b2ce2d2"
+    assert string_processing("abcde") == "abcde"
+    assert string_processing("aaabbdefffff") == "a3b2def5"

@@ -28,8 +28,9 @@ def show_final_string():
 show_final_string()
 
 
-# assert solution("a#bc#d") == "bd"
-# assert solution("abc#d##c") == "ac"
-# assert solution("abc##d######") == ""
-# assert solution("#######") == ""
-# assert solution("") == ""
+if __name__ == '__main__':
+    assert delete_symbol("a#bc#d") == "bd"
+    assert delete_symbol("abc#d##c") == "ac"
+    assert delete_symbol("abc##d######") == ""
+    assert delete_symbol("#######") == ""
+    assert delete_symbol("") == ""

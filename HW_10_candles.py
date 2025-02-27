@@ -29,10 +29,11 @@ def show_result_candles_number():
 show_result_candles_number()
 
 
-# assert solution(5, 2) == 9
-# assert solution(1, 2) == 1
-# assert solution(15, 5) == 18
-# assert solution(12, 2) == 23
-# assert solution(6, 4) == 7
-# assert solution(13, 5) == 16
-# assert solution(2, 3) == 2
+if __name__ == '__main__':
+    assert count_candles(5, 2) == 9
+    assert count_candles(1, 2) == 1
+    assert count_candles(15, 5) == 18
+    assert count_candles(12, 2) == 23
+    assert count_candles(6, 4) == 7
+    assert count_candles(13, 5) == 16
+    assert count_candles(2, 3) == 2
