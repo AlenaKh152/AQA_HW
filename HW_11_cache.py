@@ -1,7 +1,9 @@
 import os
 os.system('cls')
 
-cache_dict = {}
+from typing import Union
+
+cache_dict: dict[(int, float), (int, float)] = {}
 
 
 def cache(func):
