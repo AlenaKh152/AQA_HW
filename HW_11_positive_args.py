@@ -6,7 +6,7 @@ def validate_arguments(func):
     def wrapper(*args):
         flag = True
         for arg in func(*args):
-            if (not (type(arg) == int or type(arg) == float)) or arg <= 0:
+            if not isinstance(arg, (float, int)) or arg <= 0:
                 flag = False
                 break
         if flag:

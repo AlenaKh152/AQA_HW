@@ -7,7 +7,7 @@ def typed(new_type):
         def wrapper(*args):
             new_args = []
             for arg in args:
-                if type(arg) != new_type:
+                if not isinstance(arg, new_type):
                     new_args.append(new_type(arg))
                 else:
                     new_args.append(arg)
@@ -17,27 +17,27 @@ def typed(new_type):
 
 
 @typed(new_type=str)
-def add(a, b):
+def add_1(a, b):
     return a + b
 
 
-print(add("3", 5))
-print(add(5, 5))
-print(add('a', 'b'))
+print(add_1("3", 5))
+print(add_1(5, 5))
+print(add_1('a', 'b'))
 
 
 @typed(new_type=int)
-def add(a, b, c):
+def add_2(a, b, c):
     return a + b + c
 
 
-print(add(5, 6, 7))
-print(add('5', 6, 7))
+print(add_2(5, 6, 7))
+print(add_2('5', 6, 7))
 
 
 @typed(new_type=float)
-def add(a, b, c):
+def add_3(a, b, c):
     return a + b + c
 
 
-print(add(0.1, 0.2, 0.4))
+print(add_3(0.1, 0.2, 0.4))

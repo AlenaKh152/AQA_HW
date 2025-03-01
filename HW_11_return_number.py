@@ -5,7 +5,7 @@ os.system('cls')
 def is_function_result_num(func):
     def wrapper(*args):
         result = func(*args)
-        if not (isinstance(result, int) or isinstance(result, float)):
+        if not isinstance(result, (float, int)):
             print(f'{result} -- Результат функции НЕ ЯВЛЯЕТСЯ числом!')
         else:
             print(f'{result} -- Результат функции является числом.')
