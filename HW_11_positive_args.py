@@ -4,15 +4,10 @@ os.system('cls')
 
 def validate_arguments(func):
     def wrapper(*args):
-        flag = True
         for arg in func(*args):
             if not isinstance(arg, (float, int)) or arg <= 0:
-                flag = False
-                break
-        if flag:
-            return 'Ура! Все аргументы функции положительные числа.'
-        else:
-            raise ValueError('Не все аргументы функции положительные числа!')
+                raise ValueError('Не все аргументы функции положительные числа!')
+        return 'Ура! Все аргументы функции положительные числа.'
     return wrapper
 
 

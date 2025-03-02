@@ -3,17 +3,15 @@ from typing import Union
 import os
 os.system('cls')
 
-
-cache_dict: dict[Union[int, float], Union[int, float]] = {}
+cache_dict: dict[Union[int,float], Union[int, float]] = {}
 
 
 def cache(func):
     def wrapper(*args):
-        key = args
-        if key in cache_dict:
-            return cache_dict[key]
+        if args in cache_dict:
+            return cache_dict[args]
         else:
-            result = cache_dict.setdefault(key, func(*args))
+            result = cache_dict.setdefault(args, func(*args))
             return result
     return wrapper
 
