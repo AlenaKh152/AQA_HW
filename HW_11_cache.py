@@ -3,7 +3,7 @@ from typing import Union
 import os
 os.system('cls')
 
-cache_dict: dict[Union[int,float], Union[int, float]] = {}
+cache_dict: dict[Union[int, float], Union[int, float]] = {}
 
 
 def cache(func):

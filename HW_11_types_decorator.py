@@ -36,8 +36,8 @@ print(add_2('5', 6, 7))
 
 
 @typed(new_type=float)
-def add_2(a, b, c):
+def add_3(a, b, c):
     return a + b + c
 
 
-print(add_2(0.1, 0.2, 0.4))
+print(add_3(0.1, 0.2, 0.4))
