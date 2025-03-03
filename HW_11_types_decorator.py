@@ -26,14 +26,11 @@ print(add_1(5, 5))
 print(add_1('a', 'b'))
 
 
-def use_int_type(my_var):  #Для выбора нового типа new_type в аргументах декоратора: 1 - int, 0 - float
-    if my_var == 1:
-        return True
-    else:
-        return False
+def use_int_type(my_var):  # Для выбора new_type в аргументах декоратора: 1 -int, 0 -float
+    return bool(my_var)
 
 
-@typed(new_type=int if use_int_type(0) else float)  # use_int_type(1) - int, use_int_type(0) - float
+@typed(new_type=int if use_int_type(1) else float)  # use_int_type(1) - int, use_int_type(0) - float
 def add_2(a, b, c):
     return a + b + c
 
