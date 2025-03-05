@@ -13,7 +13,6 @@ class Book:
         self.reserve_reader = None
         self.current_reader = None
 
-
     def reserve(self, reader):
         if not self.reserve_flag and self.current_reader != reader:
             self.reserve_flag = True
@@ -26,7 +25,6 @@ class Book:
         else:
             print(f'Reserve error. {self.book_name} is already reserved/received.')
 
-
     def cancel_reserve(self, reader):
         if self.reserve_flag and self.reserve_reader == reader:
             self.reserve_flag = False
@@ -36,7 +34,6 @@ class Book:
             print(f'Reader {reader.name} has no active {self.book_name} reservation to cancel')
         else:
             print(f'No active reserve. {self.book_name} can be reserved.')
-
 
     def get_book(self, reader):
         if self.reserve_flag and self.reserve_reader == reader and not self.current_reader:
@@ -48,7 +45,6 @@ class Book:
             print(f'Receive error. {self.book_name} is still used by another reader!')
         else:
             print(f'Receive error. {reader.name} has no reservation for {self.book_name}.')
-
 
     def return_book(self, reader):
         if self.current_reader == reader:
@@ -63,18 +59,14 @@ class Reader:
     def __init__(self, name):
         self.name = name
 
-
     def reserve_book(self, book):
         book.reserve(self)
-
 
     def cancel_reserve(self, book):
         book.cancel_reserve(self)
 
-
     def get_book(self, book):
         book.get_book(self)
-
 
     def return_book(self, book):
         book.return_book(self)
