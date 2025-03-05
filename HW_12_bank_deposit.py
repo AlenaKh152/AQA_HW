@@ -1,6 +1,4 @@
 import os
-from typing import Any
-
 os.system('cls')
 
 
