@@ -1,4 +1,6 @@
 import os
+from typing import Any
+
 os.system('cls')
 
 
@@ -19,13 +21,15 @@ class Bank:
             self.deposits[client_id] = [start_balance, years]
 
     def calc_deposit_interest_rate(self, client_id):
-        global result_balance
-        if client_id not in self.deposits:
-            print(f'У клиента {self.clients[client_id]} отсутствуют открытые депозиты.')
-        else:
+        result_balance = 0
+        if client_id in self.deposits:
             start_sum = self.deposits[client_id][0]
             term = self.deposits[client_id][1]
             result_balance = start_sum * ((1 + (self.percent / 100) / (term * 12)) ** (term * 12))
+        elif client_id in self.clients and client_id not in self.deposits:
+            print(f'У клиента {self.clients[client_id]} отсутствуют открытые депозиты.')
+        elif client_id not in self.clients:
+            print('Клиент с данным id не зарегистрирован.')
         return round(result_balance, 2)
 
     def close_deposit(self, client_id):
@@ -44,7 +48,11 @@ bank.register_client('0002', 'Yura')
 bank.open_deposit_accaunt('0001', 1000, 1)
 bank.open_deposit_accaunt('0002', 2000, 2)
 
+bank.calc_deposit_interest_rate('0003')
+
 bank.close_deposit('0002')
+
+print(bank.calc_deposit_interest_rate('0001'))
 
 if __name__ == '__main__':
     assert bank.calc_deposit_interest_rate('0001') == 1104.72, "<My Err message: Incorrect result>"
