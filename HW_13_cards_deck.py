@@ -2,9 +2,9 @@ import random
 
 
 class Card:
-    number_list = ['2' ,'3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
+    number_list = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
     mast_list = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
-    card_list = []
+    card_list: list[str] = []
 
     def __init__(self):
         for i in self.number_list:
@@ -15,9 +15,6 @@ class Card:
 
 
 class CardsDeck(Card):
-    def __init__(self):
-        super().__init__()
-
     def get(self, card_num):
         return self.card_list[card_num - 1]
 

@@ -9,7 +9,7 @@ class Person:
 
 
 class CurrencyConverter:
-    rates = {'USD' : 3.269, 'EUR' : 3.52}
+    rates = {'USD': 3.269, 'EUR': 3.52}
 
     def exchange_currency(self, person, to_currency='BYN'):
         if to_currency == 'BYN':
@@ -25,7 +25,7 @@ petya = Person('EUR', 10)
 converter = CurrencyConverter()
 
 print(converter.exchange_currency(vasya))
-print(converter.exchange_currency(vasya))
+print(converter.exchange_currency(petya))
 
 print(converter.exchange_currency(vasya, 'EUR'))
 print(converter.exchange_currency(petya, 'USD'))
