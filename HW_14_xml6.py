@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 
-with open('C:/Users/Admin/Documents/AQA_HW/products.xml', 'r',  encoding="utf-8") as file:
+with open('products.xml', 'r',  encoding="utf-8") as file:
     data = file.read()
 
 

@@ -16,7 +16,7 @@ student5 = Student('Lucy', 'Group2', [6, 8, 8, 7, 10])
 
 students = [student1, student2, student3, student4, student5]
 
-with open('C:/Users/Admin/Documents/AQA_HW/students.txt', 'w', encoding="utf-8") as file:
+with open('students.txt', 'w', encoding="utf-8") as file:
     for student in students:
         file.write(str(student) + '\n')
 
@@ -35,7 +35,7 @@ def count_group_students():
 
 
 all_students = f'All groups: {len(students)} students.'
-group_students = (' ').join(count_group_students())
+group_students = ' '.join(count_group_students())
 
 
 def average_group_mark():
@@ -50,13 +50,13 @@ def average_group_mark():
     return average_marks
 
 
-average = (' ').join(average_group_mark())
+average = ' '.join(average_group_mark())
 
-with open('C:/Users/Admin/Documents/AQA_HW/students.txt', 'a', encoding="utf-8") as file:
+with open('students.txt', 'a', encoding="utf-8") as file:
     file.write(all_students + '\n')
     file.write(group_students + '\n')
     file.write(average + '\n')
 
-with open('C:/Users/Admin/Documents/AQA_HW/students.txt', 'r', encoding="utf-8") as file:
+with open('students.txt', 'r', encoding="utf-8") as file:
     for line in file:
         print(line)
