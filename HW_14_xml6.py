@@ -1,10 +1,10 @@
 import xml.etree.ElementTree as ET
 
-file = open('C:/Users/Admin/Documents/AQA_HW/products.xml', 'r')
-text = file.read()
+with open('C:/Users/Admin/Documents/AQA_HW/products.xml', 'r',  encoding="utf-8") as file:
+    data = file.read()
 
 
-def parseXML(text):
+def total_price(text):
     root = ET.fromstring(text)
     result_price = 0
     for child in root:
@@ -12,4 +12,4 @@ def parseXML(text):
     return result_price
 
 
-print(f'Total price: {parseXML(text)}')
+print(f'Total price: {total_price(data)}')

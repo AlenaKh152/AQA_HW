@@ -7,13 +7,13 @@ import yaml
 
 
 def add_book(name, author, year):
-    with open('C:/Users/Admin/Documents/AQA_HW/data_yaml.yaml', 'r') as file:
+    with open('C:/Users/Admin/Documents/AQA_HW/data_yaml.yaml', 'r',  encoding="utf-8") as file:
         start_data = yaml.safe_load(file)
     key = name
     value = [author, year]
     if key not in start_data.keys():
         start_data[key] = value
-        with open('C:/Users/Admin/Documents/AQA_HW/data_yaml.yaml', 'w') as file:
+        with open('C:/Users/Admin/Documents/AQA_HW/data_yaml.yaml', 'w',  encoding="utf-8") as file:
             yaml.dump(start_data, file)
         print(f'Book {key} was added.')
     else:
