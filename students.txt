@@ -1,0 +1,8 @@
+Tom, Group1, [5, 7, 8, 9, 8]
+Kate, Group1, [9, 8, 8, 7, 9]
+Bob, Group2, [7, 7, 9, 6, 10]
+Mary, Group2, [7, 9, 9, 10, 8]
+Lucy, Group2, [6, 8, 8, 7, 7]
+All groups: 5 students.
+Group1: 2 students. Group2: 3 students.
+Group1: average mark is 7.8. Group2: average mark is 7.87.
