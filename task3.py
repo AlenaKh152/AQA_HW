@@ -1,9 +1,9 @@
 def input_data():
     try:
-        n = int(input("Enter the number: "))
-        return n
-    except ValueError as e:
-       return None
+        number = int(input("Enter the number: "))
+        return number
+    except ValueError:
+        return None
 
 
 def find_sum_number(num):

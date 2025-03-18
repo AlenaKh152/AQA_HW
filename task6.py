@@ -9,11 +9,13 @@ def file_process(file_name):
     letters_list = ''.join(words_list)
     letters_count = len(letters_list)
 
-    new_lines = f"Lines count: {lines_count}\nWords count: {words_count}\nLetters count: {letters_count}\n"
+    new_lines = (f"Lines count: {lines_count}\nWords count: {words_count}\n"
+                 f"Letters count: {letters_count}\n")
 
     with open('file_task6.txt', 'a', encoding="utf-8") as file:
         file.write(new_lines)
 
     print(new_lines)
+
 
 file_process('file_task6.txt')
