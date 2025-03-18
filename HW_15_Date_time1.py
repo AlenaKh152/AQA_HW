@@ -1,5 +1,6 @@
-from dateutil.parser import parse
 import os
+from dateutil.parser import parse
+
 os.system('cls')
 
 date1 = parse(input('Enter the first date (YYYY-MM-DD): '))

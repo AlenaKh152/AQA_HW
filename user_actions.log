@@ -1,0 +1,10 @@
+2025-03-18 17:25:05,567 - INFO - Data list:  ['5', '8', '9', '2']
+2025-03-18 17:25:05,568 - DEBUG - Num_list from Data_list:  [5, 8, 9, 2]
+2025-03-18 17:25:05,568 - INFO - Average is 6.0
+2025-03-18 17:25:11,608 - INFO - Data list:  ['sdf', 'sdf']
+2025-03-18 17:25:11,609 - ERROR - Exception: invalid literal for int() with base 10: 'sdf'
+2025-03-18 17:25:11,610 - ERROR - Invalid data entered.
+2025-03-18 17:27:43,603 - INFO - Data list:  ['24', 'sdf']
+2025-03-18 17:27:59,437 - INFO - Data list:  ['3', 'dfg']
+2025-03-18 17:27:59,438 - ERROR - Exception: invalid literal for int() with base 10: 'dfg'
+2025-03-18 17:27:59,446 - ERROR - Invalid data entered.

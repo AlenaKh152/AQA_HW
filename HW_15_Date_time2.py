@@ -1,6 +1,7 @@
+import os
 from datetime import date
 from dateutil.parser import parse
-import os
+
 os.system('cls')
 
 date1 = parse(input('Enter the date: ')).date()

@@ -1,5 +1,5 @@
 from logging import getLogger, basicConfig, DEBUG, ERROR, StreamHandler
-from logging.handlers import  TimedRotatingFileHandler
+from logging.handlers import TimedRotatingFileHandler
 import os
 os.system('cls')
 
@@ -16,7 +16,7 @@ basicConfig(level=DEBUG, format=FORMAT, handlers=[file_handler, console_handler]
 
 
 def enter_data():
-    data_list = input("Enter data to evaluate: ").split()
+    data_list = input("Enter numbers to evaluate its average: ").split()
     logger.info('Data list:  %s', data_list)
     return data_list
 
@@ -29,7 +29,7 @@ def count_average():
         count_avg = round(sum(num_list) / len(num_list), 2)
         logger.info('Average is %s', count_avg)
         return count_avg
-    except Exception as e:
+    except ValueError as e:
         logger.error('Exception: %s', e)
         return None
 
