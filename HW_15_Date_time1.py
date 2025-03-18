@@ -1,4 +1,5 @@
 import os
+from datetime import date
 from dateutil.parser import parse
 
 os.system('cls')
@@ -8,8 +9,8 @@ date2 = parse(input('Enter the second date (YYYY-MM-DD): '))
 
 
 def days_difference(date_1, date_2):
-    delta = abs((date_1 - date_2).days)
-    print(f'Number of days between dates: {delta}.')
+    diff = abs((date_1 - date_2).days)
+    return diff
 
 
-days_difference(date1, date2)
+print(f'Number of days between dates: {days_difference(date1, date2)}')
