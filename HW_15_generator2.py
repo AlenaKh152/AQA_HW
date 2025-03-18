@@ -1,7 +1,6 @@
+from logging import getLogger, DEBUG, INFO, basicConfig, StreamHandler, FileHandler
 import os
 os.system('cls')
-
-from logging import getLogger, DEBUG, INFO, basicConfig, StreamHandler, FileHandler
 
 logger = getLogger()
 FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
@@ -32,10 +31,9 @@ def is_prime(num):
     for i in range(1, num + 1):
         if num % i == 0:
             divider_count += 1
-    if divider_count == 2:
-        return True
-    else:
+    if divider_count != 2:
         return False
+    return True
 
 
 def my_gen_func(start, end):

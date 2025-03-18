@@ -1,7 +1,6 @@
+from logging import getLogger, ERROR, DEBUG, basicConfig, StreamHandler, FileHandler
 import os
 os.system('cls')
-
-from logging import getLogger, ERROR, DEBUG, basicConfig, StreamHandler, FileHandler
 
 logger = getLogger()
 FORMAT = "%(asctime)s - %(levelname)s - %(message)s"

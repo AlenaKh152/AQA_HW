@@ -1,8 +1,7 @@
-import os
-os.system('cls')
-
 from logging import getLogger, basicConfig, DEBUG, ERROR, StreamHandler
 from logging.handlers import  TimedRotatingFileHandler
+import os
+os.system('cls')
 
 logger = getLogger()
 FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
@@ -13,7 +12,7 @@ file_handler.setLevel(DEBUG)
 console_handler = StreamHandler()
 console_handler.setLevel(ERROR)
 
-basicConfig(level = DEBUG, format = FORMAT, handlers= [file_handler, console_handler])
+basicConfig(level=DEBUG, format=FORMAT, handlers=[file_handler, console_handler])
 
 
 def enter_data():
