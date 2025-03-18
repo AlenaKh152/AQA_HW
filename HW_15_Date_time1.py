@@ -1,5 +1,4 @@
 import os
-from datetime import date
 from dateutil.parser import parse
 
 os.system('cls')
