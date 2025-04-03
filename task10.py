@@ -15,9 +15,9 @@ def identity_1(x):
     return x
 
 
-result_1 = identity_1(42)
-print(result_1[0])
-print(result_1[1])
+result1 = identity_1(42)
+print(result1[0])
+print(result1[1])
 
 
 @my_decorator()
@@ -25,6 +25,6 @@ def identity_2(x):
     return x
 
 
-result_2 = identity_2(42)
-print(result_2[0])
-print(result_2[1])
+result2 = identity_2(42)
+print(result2[0])
+print(result2[1])
