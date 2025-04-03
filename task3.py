@@ -8,10 +8,7 @@ def input_data():
 
 def find_sum_number(num):
     if num:
-        result_sum = 0
-        for i in range(1, num + 1):
-            result_sum += i
-        return result_sum
+        return ((num * (num - 1)) // 2) + num
     else:
         return 'Error data'
 
