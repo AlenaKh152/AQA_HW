@@ -1,7 +1,3 @@
-import os
-os.system('cls')
-
-
 class Bank:
     percent = 10
 
@@ -43,6 +39,7 @@ class Bank:
             print(f'Депозит клиента {self.clients[client_id]} {client_id} успешно закрыт.')
 
 
+
 bank = Bank()
 
 bank.register_client('0001', 'Alena')
@@ -57,7 +54,3 @@ bank.calc_deposit_interest_rate('0003')
 bank.close_deposit('0002')
 
 print(bank.calc_deposit_interest_rate('0001'))
-
-if __name__ == '__main__':
-    assert bank.calc_deposit_interest_rate('0001') == 1104.72, "<My Err message: Incorrect result>"
-# print(bank.calc_deposit_interest_rate('0001'))

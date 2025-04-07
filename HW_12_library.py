@@ -3,7 +3,6 @@ os.system('cls')
 
 
 class Book:
-
     def __init__(self, book_name, author, num_pages, isbn):
         self.book_name = book_name
         self.author = author
@@ -17,41 +16,37 @@ class Book:
         if not self.reserve_flag and self.current_reader != reader:
             self.reserve_flag = True
             self.reserve_reader = reader
-            print(f'Success reserve. {self.book_name} has been reserved by {reader.name}.')
+            return True
         elif not self.reserve_flag:
             self.reserve_flag = True
             self.reserve_reader = reader
-            print(f'Success reserve. {self.book_name} has been reserved by {reader.name}.')
+            return True
         else:
-            print(f'Reserve error. {self.book_name} is already reserved/received.')
+            return False
 
     def cancel_reserve(self, reader):
         if self.reserve_flag and self.reserve_reader == reader:
             self.reserve_flag = False
             self.reserve_reader = None
-            print(f'Book reservation was cancelled by {reader.name}.')
-        elif self.reserve_flag and self.reserve_reader != reader:
-            print(f'Reader {reader.name} has no active {self.book_name} reservation to cancel')
+            return True
         else:
-            print(f'No active reserve. {self.book_name} can be reserved.')
+            return False
 
     def get_book(self, reader):
         if self.reserve_flag and self.reserve_reader == reader and not self.current_reader:
             self.reserve_flag = False
             self.reserve_reader = None
             self.current_reader = reader
-            print(f'Success receive. {self.book_name} was successfully received by {reader.name}!')
-        elif self.reserve_flag and self.reserve_reader == reader and self.current_reader != reader:
-            print(f'Receive error. {self.book_name} is still used by another reader!')
+            return True
         else:
-            print(f'Receive error. {reader.name} has no reservation for {self.book_name}.')
+            return False
 
     def return_book(self, reader):
         if self.current_reader == reader:
             self.current_reader = None
-            print(f'Success return. {self.book_name} was returned by {reader.name}.')
+            return True
         else:
-            print(f'Return error. {self.book_name} was not received by {reader.name}.')
+            return False
 
 
 class Reader:
@@ -60,16 +55,28 @@ class Reader:
         self.name = name
 
     def reserve_book(self, book):
-        book.reserve(self)
+        if book.reserve(self):
+            print(f'Success reserve. {book.book_name} has been reserved by {self.name}.')
+        else:
+            print(f'Reserve error. {book.book_name} is already reserved/received.')
 
     def cancel_reserve(self, book):
-        book.cancel_reserve(self)
+        if book.cancel_reserve(self):
+            print(f'Success cancel. Book reservation was cancelled by {self.name}.')
+        else:
+            print(f'Cancel error. No active reservation for {book.book_name}.')
 
     def get_book(self, book):
-        book.get_book(self)
+        if book.get_book(self):
+            print(f'Success receive. {book.book_name} was successfully received by {self.name}!')
+        else:
+            print(f'Receive error. {book.book_name} is not reserved or is still used!')
 
     def return_book(self, book):
-        book.return_book(self)
+        if book.return_book(self):
+            print(f'Success return. {book.book_name} was returned by {self.name}.')
+        else:
+            print(f'Return error. {book.book_name} was not received by {self.name}.')
 
 
 book1 = Book(book_name="First book", author="Tom", num_pages=400, isbn="0006754023")
