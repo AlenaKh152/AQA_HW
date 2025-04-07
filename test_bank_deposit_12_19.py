@@ -56,11 +56,11 @@ class TestBank(unittest.TestCase):
     # Тест негативный: профит депозита для зарегистрированного клиента БЕЗ открытого вклада
     def test_negative1_calc_deposit_interest_rate(self):
         TestBank.bank.register_client('0009', 'Alena')
-        self.assertEqual(TestBank.bank.calc_deposit_interest_rate('0009'),0)
+        self.assertEqual(TestBank.bank.calc_deposit_interest_rate('0009'), 0)
 
     # Тест негативный: профит депозита для НЕ зарегистрированного клиента БЕЗ открытого вклада
     def test_negative2_calc_deposit_interest_rate(self):
-        self.assertEqual(TestBank.bank.calc_deposit_interest_rate('0010'),0)
+        self.assertEqual(TestBank.bank.calc_deposit_interest_rate('0010'), 0)
 
 
 if __name__ == '__main__':

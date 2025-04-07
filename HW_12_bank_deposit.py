@@ -39,7 +39,6 @@ class Bank:
             print(f'Депозит клиента {self.clients[client_id]} {client_id} успешно закрыт.')
 
 
-
 bank = Bank()
 
 bank.register_client('0001', 'Alena')

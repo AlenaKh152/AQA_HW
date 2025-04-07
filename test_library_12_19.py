@@ -102,8 +102,7 @@ class TestLibrary(unittest.TestCase):
     def test_negative2_return_book(self):
         self.reader1.reserve_book(self.book1)
         self.reader1.return_book(self.book1)
-        (self.assertNotEqual(self.book1.current_reader, self.reader1)
-         or self.assertIsNone(self.book1.current_reader))
+        self.assertIsNone(self.book1.current_reader)
 
 
 if __name__ == '__main__':
