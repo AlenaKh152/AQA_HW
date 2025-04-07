@@ -1,13 +1,11 @@
-import os
-os.system('cls')
-
 import unittest
 from HW_12_library import Book, Reader
 
+
 class TestLibrary(unittest.TestCase):
     def setUp(self):
-        self.book1 = Book("First book","Tom",400,"0006754023")
-        self.book2 = Book("Second book","Jerry",500,"00022222")
+        self.book1 = Book("First book", "Tom", 400, "0006754023")
+        self.book2 = Book("Second book", "Jerry", 500, "00022222")
         self.reader1 = Reader('Vasya')
         self.reader2 = Reader('Petya')
 
