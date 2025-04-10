@@ -1,11 +1,14 @@
 class ClientAlreadyExistsError(Exception):
     pass
 
+
 class ClientDoesNotExistsError(Exception):
     pass
 
+
 class ClientHasNoDepositError(Exception):
     pass
+
 
 class Bank:
     percent = 10
@@ -47,10 +50,11 @@ class Bank:
     def close_deposit(self, client_id):
         if client_id not in self.deposits:
             print(f'У данного клиента {client_id} отсутствуют открытые депозиты.')
-            raise ClientHasNoDepositError(f'У данного клиента {client_id} отсутствуют открытые депозиты.')
+            raise ClientHasNoDepositError(f'У клиента {client_id} отсутствуют открытые депозиты.')
         else:
             del self.deposits[client_id]
             print(f'Депозит клиента {self.clients[client_id]} {client_id} успешно закрыт.')
+
 
 if __name__ == "__main__":
     bank = Bank()

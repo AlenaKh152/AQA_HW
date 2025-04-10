@@ -1,8 +1,9 @@
 import pytest
 import logging
 
-from HW_20.source.HW_12_bank_deposit_copy import (ClientAlreadyExistsError, ClientDoesNotExistsError,
-                                     ClientHasNoDepositError)
+from HW_20.source.HW_12_bank_deposit_copy import (ClientAlreadyExistsError,
+                                                  ClientDoesNotExistsError,
+                                                  ClientHasNoDepositError)
 
 
 class TestBankDeposit:

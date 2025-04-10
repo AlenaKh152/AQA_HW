@@ -12,7 +12,7 @@ class TestLibrary:
         assert create_book1.reserve_flag is True
         logger.info('Test1 Library info: Book1 has been reserved by Reader1')
 
-   # Тест позитивный: резерв книги, которая не зарезервирована, но находится на руках
+    # Тест позитивный: резерв книги, которая не зарезервирована, но находится на руках
     def test_positive2_reserve(self, create_book1, create_reader1, create_reader2):
         logger = logging.getLogger("Test_logger")
         create_reader1.reserve_book(create_book1)
@@ -66,7 +66,7 @@ class TestLibrary:
             create_reader1.cancel_reserve(create_book1)
         logger.info('Test7 Library info: Book1 reserve was not canceled by Reader1')
 
-   # Тест позитивный: получение зарезервированной книги
+    # Тест позитивный: получение зарезервированной книги
     def test_positive_get_book(self, create_book1, create_reader1):
         logger = logging.getLogger("Test_logger")
         create_reader1.reserve_book(create_book1)
@@ -76,7 +76,7 @@ class TestLibrary:
         assert create_book1.current_reader == create_reader1
         logger.info('Test8 Library info: Book1  was got by Reader1')
 
-   # Тест негативный: получение зарезервированной книги, когда книга ещё у другого пользователя
+    # Тест негативный: получение зарезервированной книги, когда книга ещё у другого пользователя
     def test_negative1_get_book(self, create_book1, create_reader1, create_reader2):
         logger = logging.getLogger("Test_logger")
         create_reader1.reserve_book(create_book1)
@@ -95,7 +95,7 @@ class TestLibrary:
         logger.info('Test10 Library info: Book1  was not got by Reader2, it is reserved by Reader1')
 
     # Тест позитивный: возврат полученной книги
-    def test_positive_return_book(self,create_book1, create_reader1):
+    def test_positive_return_book(self, create_book1, create_reader1):
         logger = logging.getLogger("Test_logger")
         create_reader1.reserve_book(create_book1)
         create_reader1.get_book(create_book1)
