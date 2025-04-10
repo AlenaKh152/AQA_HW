@@ -54,15 +54,3 @@ class Bank:
         else:
             del self.deposits[client_id]
             print(f'Депозит клиента {self.clients[client_id]} {client_id} успешно закрыт.')
-
-
-if __name__ == "__main__":
-    bank = Bank()
-    bank.register_client('0001', 'Alena')
-    bank.register_client('0002', 'Yura')
-    bank.register_client('0002', 'lala')
-    bank.open_deposit_accaunt('0001', 1000, 1)
-    bank.open_deposit_accaunt('0002', 2000, 2)
-    bank.calc_deposit_interest_rate('0003')
-    bank.close_deposit('0002')
-    print(bank.calc_deposit_interest_rate('0001'))

@@ -106,18 +106,3 @@ class Reader:
         else:
             print(f'Return error. {book.book_name} was not received by {self.name}.')
             raise ReturnError(f'Return error. {book.book_name} was not received by {self.name}.')
-
-
-if __name__ == "__main__":
-    book1 = Book(book_name="First book", author="Tom", num_pages=400, isbn="0006754023")
-    book2 = Book(book_name="Second book", author="Jerry", num_pages=500, isbn="00022222")
-    vasya = Reader('Vasya')
-    petya = Reader('Petya')
-    vasya.reserve_book(book1)
-    petya.reserve_book(book1)
-    vasya.return_book(book1)
-    vasya.get_book(book1)
-    petya.reserve_book(book1)
-    petya.get_book(book1)
-    vasya.reserve_book(book1)
-    vasya.return_book(book1)
