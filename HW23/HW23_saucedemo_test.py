@@ -1,12 +1,10 @@
-import pytest
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
 class TestSauceDemo:
-    #Тест позитивный: проверка входа с корректными Login и Password
+    # Тест позитивный: проверка входа с корректными Login и Password
     def test_user_login_positive(self, create_browser):
         browser = create_browser
         browser.get("https://www.saucedemo.com/")
@@ -19,7 +17,7 @@ class TestSauceDemo:
         success_text = browser.find_element(By.CLASS_NAME, 'app_logo')
         assert success_text.text == "Swag Labs"
 
-    #Тест негативный: проверка входа с незаполненными Login и Password
+    # Тест негативный: проверка входа с незаполненными Login и Password
     def test_user_login_negative1(self, create_browser):
         browser = create_browser
         browser.get("https://www.saucedemo.com/")
@@ -28,7 +26,7 @@ class TestSauceDemo:
         error_text = browser.find_element(By.CSS_SELECTOR, '[data-test="error"]')
         assert error_text.text == "Epic sadface: Username is required"
 
-    #Тест негативный: проверка входа с некорректными Login и Password
+    # Тест негативный: проверка входа с некорректными Login и Password
     def test_user_login_negative2(self, create_browser):
         browser = create_browser
         browser.get("https://www.saucedemo.com/")
@@ -68,7 +66,7 @@ class TestSauceDemo:
                           ((By.CSS_SELECTOR, '[data-test="remove-sauce-labs-backpack"]'))))
         remove_button.click()
         success_list = browser.find_elements(By.XPATH, '//div[text()="Sauce Labs Backpack"]')
-        assert  len(success_list) == 0
+        assert len(success_list) == 0
 
     # Тест позитивный: открытие страницы карточки товара
     def test_open_item_page(self, login_func):
@@ -76,7 +74,7 @@ class TestSauceDemo:
         item_link = browser.find_element(By.XPATH, '//div[text()="Sauce Labs Backpack"]')
         item_link.click()
         success_text = browser.find_element(By.XPATH, '//div[text()="Sauce Labs Backpack"]')
-        assert  success_text.text == "Sauce Labs Backpack"
+        assert success_text.text == "Sauce Labs Backpack"
 
     # Тест позитивный: добавление нескольких товаров в корзину со страниц карточек товаров
     def test_add_items_to_cart_from_product_page(self, login_func):
@@ -117,8 +115,8 @@ class TestSauceDemo:
         last_name_field.send_keys("Jerry")
         zipcode_name_field = browser.find_element(By.CSS_SELECTOR, '[data-test="postalCode"]')
         zipcode_name_field.send_keys("112233")
-        continue_button =  (browser.find_element
-                            (By.CSS_SELECTOR, '[type="submit"][data-test="continue"]'))
+        continue_button = (browser.find_element
+                           (By.CSS_SELECTOR, '[type="submit"][data-test="continue"]'))
         continue_button.click()
         success_text2 = browser.find_element(By.CSS_SELECTOR, '[data-test="title"]')
         assert success_text2.text == 'Checkout: Overview'
