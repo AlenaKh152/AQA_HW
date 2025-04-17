@@ -5,7 +5,8 @@ from selenium.webdriver.chrome.options import Options
 
 # отключаю уведомление chrome о том, что пароль был раскрыт(мешает тестам)
 chr_options = Options()
-chr_options.add_experimental_option("excludeSwitches", ["enable-automation", "password-leak-detection"])
+(chr_options.add_experimental_option("excludeSwitches",
+                                     ["enable-automation", "password-leak-detection"]))
 chr_options.add_argument("--disable-blink-features=PasswordLeakDetection")
 
 
