@@ -126,4 +126,3 @@ def test_complete_order_with_incorrect_data(browser):
     checkout_s_page.click_button(checkout_s_page.finish_button)
     checkout_complete_page = CheckoutCompletePage(browser)
     assert checkout_complete_page.is_element_present(checkout_complete_page.complete_title)
-

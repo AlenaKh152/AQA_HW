@@ -32,4 +32,3 @@ def test_add_items_to_cart_from_product_page(browser):
     add_button = inv_page.select_any_add_button()
     add_button.click()
     assert inv_page.is_item_in_cart()
-

@@ -1,5 +1,4 @@
 import pytest
-from selenium import webdriver
 import undetected_chromedriver as uc
 import warnings
 
@@ -21,4 +20,3 @@ def browser():
 
     yield driver  # Возвращаем браузер для использования в тестах
     driver.quit()
-

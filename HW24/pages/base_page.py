@@ -41,4 +41,3 @@ class BasePage:
             return True
         except NoSuchElementException:
             return False
-

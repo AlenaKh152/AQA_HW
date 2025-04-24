@@ -37,4 +37,3 @@ def test_remove_item_from_cart_from_inventory_page(browser):
     remove_button = inv_page.select_any_rmv_button()
     remove_button.click()
     assert not inv_page.is_item_in_cart()
-

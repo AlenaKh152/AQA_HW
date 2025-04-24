@@ -12,10 +12,9 @@ class LoginPage(BasePage):
         super().__init__(browser)
 
     def complete_login(self, user_name, pass_word):
-        self.send_text(self.username, user_name )
+        self.send_text(self.username, user_name)
         self.send_text(self.password, pass_word)
         self.click_button(self.logging_button)
 
     def is_logging_success(self):
         return not self.is_element_present(self.error_message)
-

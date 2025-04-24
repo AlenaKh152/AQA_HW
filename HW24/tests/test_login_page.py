@@ -24,4 +24,3 @@ def test_user_login_negative2(browser):
     log_page.open()
     log_page.complete_login(UserCreds.invalid_user, UserCreds.invalid_password)
     assert not log_page.is_logging_success(), "MyFails: Logging with empty cred is correct"
-

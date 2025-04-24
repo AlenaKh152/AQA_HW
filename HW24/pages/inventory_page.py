@@ -31,4 +31,3 @@ class InventoryPage(BasePage):
     def select_any_rmv_button(self):
         all_rmv_buttons = self.browser.find_elements(*self.remove_buttons)
         return random.choice(all_rmv_buttons)
-
