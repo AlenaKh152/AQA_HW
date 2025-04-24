@@ -26,7 +26,7 @@ def test_add_item_to_cart(browser):
     log_page.open()
     log_page.complete_login(UserCreds.valid_user, UserCreds.valid_password)
     inv_page = InventoryPage(browser)
-    add_button = inv_page.select_any_add_button()
+    add_button = inv_page.select_any_element(inv_page.add_buttons)
     add_button.click()
     inv_page.click_cart_button()
     cart_page = CartPage(browser)
@@ -40,12 +40,10 @@ def test_delete_item_from_cart(browser):
     log_page.open()
     log_page.complete_login(UserCreds.valid_user, UserCreds.valid_password)
     inv_page = InventoryPage(browser)
-    add_button = inv_page.select_any_add_button()
+    add_button = inv_page.select_any_element(inv_page.add_buttons)
     add_button.click()
     inv_page.click_cart_button()
     cart_page = CartPage(browser)
-    WebDriverWait(browser, 20).until(EC.visibility_of_element_located
-                                     (cart_page.cart_remove_button))
     cart_page.click_button(cart_page.cart_remove_button)
     assert not cart_page.is_element_present(cart_page.cart_item)
 
@@ -58,8 +56,6 @@ def test_continue_shopping(browser):
     inv_page = InventoryPage(browser)
     inv_page.click_cart_button()
     cart_page = CartPage(browser)
-    (WebDriverWait(browser, 20).until(EC.visibility_of_element_located
-                                      (cart_page.continue_shop_button)))
     cart_page.click_button(cart_page.continue_shop_button)
     inv_page_new = InventoryPage(browser)
     WebDriverWait(browser, 20).until(EC.visibility_of_element_located
@@ -73,12 +69,10 @@ def test_complete_order_with_correct_data(browser):
     log_page.open()
     log_page.complete_login(UserCreds.valid_user, UserCreds.valid_password)
     inv_page = InventoryPage(browser)
-    add_button = inv_page.select_any_add_button()
+    add_button = inv_page.select_any_element(inv_page.add_buttons)
     add_button.click()
     inv_page.click_cart_button()
     cart_page = CartPage(browser)
-    WebDriverWait(browser, 20).until(EC.visibility_of_element_located
-                                     (cart_page.checkout_button))
     cart_page.click_button(cart_page.checkout_button)
     checkout_f_page = CheckoutFirstStep(browser)
     checkout_f_page.send_text(checkout_f_page.first_name_field, 'Test First Name')
@@ -86,8 +80,6 @@ def test_complete_order_with_correct_data(browser):
     checkout_f_page.send_text(checkout_f_page.zip_code_field, '112233')
     checkout_f_page.click_button(checkout_f_page.continue_button)
     checkout_s_page = CheckoutSecondStep(browser)
-    WebDriverWait(browser, 20).until(EC.visibility_of_element_located
-                                     (checkout_s_page.finish_button))
     checkout_s_page.click_button(checkout_s_page.finish_button)
     checkout_complete_page = CheckoutCompletePage(browser)
     assert checkout_complete_page.is_element_present(checkout_complete_page.complete_title)
@@ -99,12 +91,10 @@ def test_complete_order_with_incorrect_data(browser):
     log_page.open()
     log_page.complete_login(UserCreds.valid_user, UserCreds.valid_password)
     inv_page = InventoryPage(browser)
-    add_button = inv_page.select_any_add_button()
+    add_button = inv_page.select_any_element(inv_page.add_buttons)
     add_button.click()
     inv_page.click_cart_button()
     cart_page = CartPage(browser)
-    WebDriverWait(browser, 20).until(EC.visibility_of_element_located
-                                     (cart_page.checkout_button))
     cart_page.click_button(cart_page.checkout_button)
     checkout_f_page = CheckoutFirstStep(browser)
     checkout_f_page.click_button(checkout_f_page.continue_button)
@@ -121,8 +111,6 @@ def test_complete_order_with_incorrect_data(browser):
     checkout_f_page.send_text(checkout_f_page.zip_code_field, '112233')
     checkout_f_page.click_button(checkout_f_page.continue_button)
     checkout_s_page = CheckoutSecondStep(browser)
-    WebDriverWait(browser, 20).until(EC.visibility_of_element_located
-                                     (checkout_s_page.finish_button))
     checkout_s_page.click_button(checkout_s_page.finish_button)
     checkout_complete_page = CheckoutCompletePage(browser)
     assert checkout_complete_page.is_element_present(checkout_complete_page.complete_title)

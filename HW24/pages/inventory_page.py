@@ -20,14 +20,6 @@ class InventoryPage(BasePage):
         else:
             return False
 
-    def select_any_item_link(self):
-        all_item_links = self.browser.find_elements(*self.items_links)
-        return random.choice(all_item_links)
-
-    def select_any_add_button(self):
-        all_add_buttons = self.browser.find_elements(*self.add_buttons)
-        return random.choice(all_add_buttons)
-
-    def select_any_rmv_button(self):
-        all_rmv_buttons = self.browser.find_elements(*self.remove_buttons)
-        return random.choice(all_rmv_buttons)
+    def select_any_element(self, locator):
+        all_items = self.browser.find_elements(*locator)
+        return random.choice(all_items)
