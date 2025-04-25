@@ -2,8 +2,6 @@ from HW24.pages.login_page import LoginPage
 from HW24.pages.inventory_page import InventoryPage
 from HW24.pages.item_page import ItemPage
 from HW24.test_data.user_creds import UserCreds
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 
 # Тест: открытие страницы карточки товара

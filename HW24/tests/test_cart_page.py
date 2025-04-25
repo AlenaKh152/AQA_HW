@@ -5,8 +5,6 @@ from HW24.pages.checkout_first_page import CheckoutFirstStep
 from HW24.pages.checkout_second_page import CheckoutSecondStep
 from HW24.pages.checkout_complete_page import CheckoutCompletePage
 from HW24.test_data.user_creds import UserCreds
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 
 # Тест: открытие страницы корзины
