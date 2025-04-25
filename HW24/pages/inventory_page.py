@@ -1,5 +1,7 @@
 from HW24.pages.base_page import BasePage
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import random
 
 
@@ -13,13 +15,17 @@ class InventoryPage(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
 
-    def get_products_list(self):
-        p_elements = self.browser.find_elements(*self.inv_items)
+    def get_products_list(self, timeout=10):
+        p_elements = WebDriverWait(self.browser, timeout).until(
+            EC.presence_of_all_elements_located(self.inv_items)
+        )
         if len(p_elements) > 0:
             return True
         else:
             return False
 
-    def select_any_element(self, locator):
-        all_items = self.browser.find_elements(*locator)
+    def select_any_element(self, locator, timeout=10):
+        all_items = WebDriverWait(self.browser, timeout).until(
+            EC.presence_of_all_elements_located(locator)
+        )
         return random.choice(all_items)

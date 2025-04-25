@@ -30,7 +30,6 @@ def test_add_item_to_cart(browser):
     add_button.click()
     inv_page.click_cart_button()
     cart_page = CartPage(browser)
-    WebDriverWait(browser, 20).until(EC.visibility_of_element_located(cart_page.cart_item))
     assert cart_page.is_element_present(cart_page.cart_item)
 
 
@@ -58,8 +57,6 @@ def test_continue_shopping(browser):
     cart_page = CartPage(browser)
     cart_page.click_button(cart_page.continue_shop_button)
     inv_page_new = InventoryPage(browser)
-    WebDriverWait(browser, 20).until(EC.visibility_of_element_located
-                                     (inv_page_new.inventory_page_title))
     assert inv_page_new.is_element_present(inv_page_new.inventory_page_title)
 
 

@@ -16,7 +16,6 @@ def test_open_item_page(browser):
     target_link_text = target_link.text
     target_link.click()
     item_page = ItemPage(browser)
-    WebDriverWait(browser, 20).until(EC.visibility_of_element_located(item_page.name_on_item_page))
     item_name = item_page.find_target_element(item_page.name_on_item_page)
     item_name_text = item_name.text
     assert target_link_text == item_name_text
