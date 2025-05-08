@@ -1,11 +1,10 @@
 import requests
-import pytest
 from helper.send_request import send_request
 
 
 # Тест позитивный: получение бронирования по id
 def test_01_get_booking_by_id(read_config, read_user_creds, read_create_temp):
-    URL = f"{read_config["URL"]}/booking"
+    URL = f'{read_config["URL"]}/booking'
     headers = {
         "Content-Type": "application/json"
     }
@@ -37,6 +36,6 @@ def test_02_get_unknown_booking_by_id(read_config, read_user_creds, read_create_
     headers = {
         "Cookie": f"token={token}"
     }
-    requests.delete(URL, headers=headers) # Удаляем бронирование
+    requests.delete(URL, headers=headers)  # Удаляем бронирование
     response = requests.get(URL)
-    assert response.status_code == 404 # Проверяем, что бронирование не найдено
+    assert response.status_code == 404  # Проверяем, что бронирование не найдено

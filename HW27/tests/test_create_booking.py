@@ -1,13 +1,11 @@
-import pytest
-import requests
 from helper.send_request import send_request
 
 
 # Тест позитивный: создание нового бронирования
 def test_01_create_booking(read_config, read_create_temp):
-    URL = f"{read_config["URL"]}/booking"
+    URL = f'{read_config["URL"]}/booking'
     headers = {
-        "Content-Type" : "application/json"
+        "Content-Type": "application/json"
     }
     response = send_request("POST", URL, headers=headers, json=read_create_temp)
     assert response["booking"]["firstname"] == read_create_temp["firstname"]

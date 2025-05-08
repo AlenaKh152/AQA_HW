@@ -1,5 +1,3 @@
-import requests
-import pytest
 from helper.send_request import send_request
 
 
@@ -7,7 +5,7 @@ from helper.send_request import send_request
 def test_01_get_token(read_config, read_user_creds):
     URL = f'{read_config["URL"]}/auth'
     headers = {
-        "Content-Type" : "application/json"
+        "Content-Type": "application/json"
     }
     token = send_request("POST", URL, headers=headers, json=read_user_creds)["token"]
     assert token
@@ -17,7 +15,7 @@ def test_01_get_token(read_config, read_user_creds):
 def test_02_get_token_by_wrong_creds(read_config, read_user_creds):
     URL = f'{read_config["URL"]}/auth'
     headers = {
-        "Content-Type" : "application/json"
+        "Content-Type": "application/json"
     }
     read_user_creds["username"] = "unknown_user_name"
     read_user_creds["password"] = "unknown_user_password"
