@@ -10,7 +10,7 @@ def test_01_get_booking_by_id(read_config, read_user_creds, read_create_temp):
     }
     booking_id = send_request("POST", URL, headers=headers, json=read_create_temp)["bookingid"]
 
-    URL = f"{read_config["URL"]}/booking/{booking_id}"
+    URL = f'{read_config["URL"]}/booking/{booking_id}'
     response = send_request("GET", URL)
     assert response["firstname"] == read_create_temp["firstname"]
     assert response["lastname"] == read_create_temp["lastname"]

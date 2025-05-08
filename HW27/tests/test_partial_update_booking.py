@@ -9,7 +9,7 @@ def test_01_partial_upd_booking(read_config, read_user_creds, read_create_temp, 
     }
     booking_id = send_request("POST", URL, headers=headers, json=read_create_temp)["bookingid"]
 
-    URL = f"{read_config["URL"]}/auth"
+    URL = f'{read_config["URL"]}/auth'
     token = send_request("POST", URL, json=read_user_creds)["token"]
     headers = {
         "Content-Type": "application/json",

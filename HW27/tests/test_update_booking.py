@@ -12,7 +12,7 @@ def test_01_update_booking(read_config, read_create_temp, read_user_creds):
     booking_id = send_request(
         "POST", URL, headers=headers, json=read_create_temp)["bookingid"]  # Создаем бронирование
 
-    URL = f"{read_config["URL"]}/auth"
+    URL = f'{read_config["URL"]}/auth'
 
     token = send_request("POST", URL, json=read_user_creds)["token"]
     URL = f'{read_config["URL"]}/booking/{booking_id}'
