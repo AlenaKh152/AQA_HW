@@ -1,0 +1,35 @@
+Инструкция по сборке и запуску.
+
+1. Структура:
+
+flask-app/
+│
+├── app.py
+├── requirements.txt
+├── Dockerfile
+└── templates/
+    └── index.html
+
+2. Перейти в папку с проектом:
+
+cd folder_path/flask-app
+
+3.Выполнить команду для сборки образа:
+
+docker build -t flask_cat_app .
+
+4. Запустить контейнер, пробросив порт (например, 8866):
+
+docker run -p 8866:5000 --name flask_cat_container flask_cat_app
+
+5. Открыть браузер и перейти по адресу:
+
+http://localhost:8866/
+
+6. Остановить контейнер:
+
+docker stop flask_cat_container
+
+7. Удалить контейнер:
+
+docker rm flask_cat_container
