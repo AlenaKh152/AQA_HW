@@ -1,4 +1,4 @@
-from helper.send_request import send_request
+from HW27.helper.send_request import send_request
 
 
 # Тест позитивный: проверка получения списка всех бронирований
