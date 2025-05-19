@@ -1,7 +1,9 @@
+import allure
 from HW27.helper.send_request import send_request
 
 
 # Тест позитивный: создание нового бронирования
+@allure.feature("Create booking")
 def test_01_create_booking(read_config, read_create_temp):
     URL = f'{read_config["URL"]}/booking'
     headers = {

@@ -1,7 +1,9 @@
+import allure
 from HW27.helper.send_request import send_request
 
 
 # Тест позитивный: получение токена
+@allure.feature("Get token")
 def test_01_get_token(read_config, read_user_creds):
     URL = f'{read_config["URL"]}/auth'
     headers = {
@@ -12,6 +14,7 @@ def test_01_get_token(read_config, read_user_creds):
 
 
 # Тест негативный: получение токена по неизвестным username и password
+@allure.feature("Get token")
 def test_02_get_token_by_wrong_creds(read_config, read_user_creds):
     URL = f'{read_config["URL"]}/auth'
     headers = {

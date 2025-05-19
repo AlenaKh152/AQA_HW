@@ -1,8 +1,10 @@
 import requests
+import allure
 from HW27.helper.send_request import send_request
 
 
 # Тест позитивный: получение бронирования по id
+@allure.feature("Get booking(s)")
 def test_01_get_booking_by_id(read_config, read_user_creds, read_create_temp):
     URL = f'{read_config["URL"]}/booking'
     headers = {
@@ -22,6 +24,7 @@ def test_01_get_booking_by_id(read_config, read_user_creds, read_create_temp):
 
 
 # Тест негативный: получение несуществующего бронирования по id
+@allure.feature("Get booking(s)")
 def test_02_get_unknown_booking_by_id(read_config, read_user_creds, read_create_temp):
     URL = f'{read_config["URL"]}/booking'
     headers = {

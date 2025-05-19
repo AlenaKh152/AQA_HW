@@ -1,8 +1,10 @@
 import requests
+import allure
 from HW27.helper.send_request import send_request
 
 
 # Тест позитивный: обновление бронирования
+@allure.feature("Update booking")
 def test_01_update_booking(read_config, read_create_temp, read_user_creds):
     URL = f'{read_config["URL"]}/booking'
     headers = {
@@ -29,6 +31,7 @@ def test_01_update_booking(read_config, read_create_temp, read_user_creds):
 
 
 # Тест негативный: обновление несуществующего бронирования
+@allure.feature("Update booking")
 def test_02_update_unknown_booking(read_config, read_create_temp, read_user_creds):
     URL = f'{read_config["URL"]}/booking'
     headers = {

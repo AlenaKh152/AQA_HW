@@ -1,7 +1,9 @@
+import allure
 from HW27.helper.send_request import send_request
 
 
 # Тест позитивный: частичное обновление бронирования
+@allure.feature("Update booking")
 def test_01_partial_upd_booking(read_config, read_user_creds, read_create_temp, read_partial_temp):
     URL = f'{read_config["URL"]}/booking'
     headers = {
