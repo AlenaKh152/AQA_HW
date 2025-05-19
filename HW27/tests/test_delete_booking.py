@@ -1,8 +1,10 @@
 import requests
+import allure
 from HW27.helper.send_request import send_request
 
 
 # Тест позитивный: удаление бронирования по id
+@allure.feature("Delete booking")
 def test_01_delete_booking(read_config, read_user_creds, read_create_temp):
     URL = f'{read_config["URL"]}/booking'
     headers = {
@@ -25,6 +27,7 @@ def test_01_delete_booking(read_config, read_user_creds, read_create_temp):
 
 
 # Тест негативный: удаление несуществующего бронирования
+@allure.feature("Delete booking")
 def test_02_delete_unknown_booking(read_config, read_user_creds, read_create_temp):
     URL = f'{read_config["URL"]}/booking'
     headers = {
